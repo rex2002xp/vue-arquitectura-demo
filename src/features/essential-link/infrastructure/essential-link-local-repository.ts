@@ -1,9 +1,10 @@
 import { Injectable } from 'src/core/di';
-import { Link, ILinkRepository } from 'src/core/link/domain';
+import { IEssentialLinkRepository } from '../domain/i-essential-link-repository';
+import { IEssentialLink } from 'src/features/essential-link/domain';
 import * as uuid from 'uuid';
 @Injectable()
-export class LinkLocalRepository implements ILinkRepository {
-  private _links: Link[];
+export class EssentialLinkLocalRepository implements IEssentialLinkRepository {
+  private readonly _links: IEssentialLink[];
   private _generateId(): string {
     return uuid.v4();
   }
@@ -62,7 +63,7 @@ export class LinkLocalRepository implements ILinkRepository {
     ];
   }
 
-  async findAll(): Promise<Link[]> {
+  async findAll(): Promise<IEssentialLink[]> {
     return new Promise((resolve) => {
       resolve(
         this._links.filter(
@@ -71,7 +72,7 @@ export class LinkLocalRepository implements ILinkRepository {
       );
     });
   }
-  update(id: string, link: Partial<Link>): void {
+  update(id: string, link: Partial<IEssentialLink>): void {
     const index = this._links.findIndex((l) => l.id === id);
     if (index !== -1) {
       this._links[index] = {
@@ -80,7 +81,7 @@ export class LinkLocalRepository implements ILinkRepository {
       };
     }
   }
-  create(link: Link): void {
+  create(link: IEssentialLink): void {
     link.id = this._generateId();
     this._links.push(link);
   }

@@ -39,7 +39,7 @@
 import EssentialLink from 'components/EssentialLink.vue';
 
 import { defineComponent, ref, onMounted } from 'vue';
-import { LinkService } from 'src/core/link';
+import { EssentialLinkFeature } from 'src/features/essential-link';
 
 export default defineComponent({
   name: 'MainLayout',
@@ -49,12 +49,12 @@ export default defineComponent({
   },
 
   setup() {
-    const linkService = LinkService.instance();
+    const linkFeature = EssentialLinkFeature.instance();
     const leftDrawerOpen = ref(false);
-    const dataLinks = ref(linkService.getEmptyLinks());
+    const dataLinks = ref(linkFeature.getEmptyLinks());
 
     const fetchData = async () => {
-      let records = await linkService.getRepository().findAll();
+      let records = await linkFeature.GetAllQuery().execute();
       dataLinks.value = records;
     };
 
