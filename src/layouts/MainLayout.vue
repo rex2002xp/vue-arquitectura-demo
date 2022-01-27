@@ -38,9 +38,8 @@
 <script lang="ts">
 import EssentialLink from 'components/EssentialLink.vue';
 
-import { defineComponent, ref } from 'vue';
-import { ILinkRepository } from 'src/core/link/domain';
-import { Link } from 'src/core/link';
+import { defineComponent, ref, onMounted } from 'vue';
+import { LinkService } from 'src/core/link';
 
 export default defineComponent({
   name: 'MainLayout',
@@ -50,12 +49,21 @@ export default defineComponent({
   },
 
   setup() {
+    const linkService = LinkService.instance();
     const leftDrawerOpen = ref(false);
+    const dataLinks = ref(linkService.getEmptyLinks());
 
-    let linkRepository: ILinkRepository = Link.instance();
+    const fetchData = async () => {
+      let records = await linkService.getRepository().findAll();
+      dataLinks.value = records;
+    };
+
+    onMounted(async () => {
+      await fetchData();
+    });
 
     return {
-      essentialLinks: linkRepository.findAll(),
+      essentialLinks: dataLinks,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;

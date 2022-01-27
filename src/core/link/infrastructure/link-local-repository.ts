@@ -62,8 +62,14 @@ export class LinkLocalRepository implements ILinkRepository {
     ];
   }
 
-  findAll(): Link[] {
-    return this._links;
+  async findAll(): Promise<Link[]> {
+    return new Promise((resolve) => {
+      resolve(
+        this._links.filter(
+          (x) => x.id === '2630388b-f09b-4664-8962-c2e1b4faa713'
+        )
+      );
+    });
   }
   update(id: string, link: Partial<Link>): void {
     const index = this._links.findIndex((l) => l.id === id);
