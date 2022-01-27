@@ -1,6 +1,6 @@
 import { container } from 'inversify-props'
-import { TYPES } from 'src/core/types';
-import { Runner } from 'src/core/runner';
+import { TYPES } from 'src/demo-src/types';
+import { Runner } from 'src/demo-src/domain/links/runner';
 
 export abstract class UseCase<Result = void, Param = void> {
   abstract readonly: boolean;

@@ -1,6 +1,6 @@
-import { Inject, Injectable } from '../di';
+import { Inject, Injectable } from '../domain/di';
 import { TYPES } from '../types';
-import { ILogger } from '../use-cases/i-logger';
+import { ILogger } from '../domain/use-cases/i-logger';
 
 @Injectable()
 export class ConsoleLogger implements ILogger {

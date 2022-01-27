@@ -1,7 +1,7 @@
 import { Inject } from 'inversify-props';
-import { Injectable } from 'src/core/di';
-import { TYPES } from 'src/core/types';
-import { IEssentialLinkRepository } from '../domain/i-essential-link-repository';
+import { Injectable } from 'src/demo-src/domain/di';
+import { TYPES } from 'src/demo-src/types';
+import { IEssentialLinkRepository } from 'src/demo-src/features/essential-link';
 import { IEssentialLink } from '../domain';
 import axios, { Axios } from 'axios';
 

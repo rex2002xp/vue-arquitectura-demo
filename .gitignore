@@ -2,7 +2,7 @@
 .thumbs.db
 node_modules
 
-# Quasar core related directories
+# Quasar demo-src related directories
 .quasar
 /dist
 

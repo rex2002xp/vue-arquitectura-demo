@@ -39,7 +39,7 @@
 import EssentialLink from 'components/EssentialLink.vue';
 
 import { defineComponent, ref, onMounted } from 'vue';
-import { EssentialLinkFeature } from 'src/features/essential-link';
+import { EssentialLinkFeature } from 'src/demo-src/features/essential-link';
 
 export default defineComponent({
   name: 'MainLayout',

@@ -1,7 +1,7 @@
-import { TYPES } from '../../core/types';
+import { TYPES } from 'src/demo-src/types';
 import { IEssentialLink } from './domain';
-import { Container } from '../../core/container';
-import { GetEssentialLinkAllQuery } from '.';
+import { Container } from 'src/demo-src/container';
+import { GetEssentialLinkAllQuery } from './index';
 
 export class EssentialLinkFeature {
   private static _instance: EssentialLinkFeature;

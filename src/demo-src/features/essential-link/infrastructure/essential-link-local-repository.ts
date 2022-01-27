@@ -1,6 +1,6 @@
-import { Injectable } from 'src/core/di';
-import { IEssentialLinkRepository } from '../domain/i-essential-link-repository';
-import { IEssentialLink } from 'src/features/essential-link/domain';
+import { Injectable } from 'src/demo-src/domain/di';
+import { IEssentialLinkRepository } from 'src/demo-src/features/essential-link';
+import { IEssentialLink } from 'src/demo-src/features/essential-link/domain';
 import * as uuid from 'uuid';
 @Injectable()
 export class EssentialLinkLocalRepository implements IEssentialLinkRepository {

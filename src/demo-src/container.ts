@@ -7,10 +7,10 @@ import {
   EssentialLinkApiRepository,
   IEssentialLinkRepository,
   GetEssentialLinkAllQuery,
-} from '../features/essential-link';
-import { Runner } from './runner';
-import { ExecutorLink, LoggerLink } from './links';
-import { ILogger } from './use-cases/i-logger';
+} from './features/essential-link';
+import { Runner } from './domain/links/runner';
+import { ExecutorLink, LoggerLink } from './domain/links';
+import { ILogger } from './domain/use-cases/i-logger';
 import { ConsoleLogger } from './infrastructure';
 
 export class Container {
@@ -29,7 +29,6 @@ export class Container {
       .bind<LoggerLink>(TYPES.LOGGER_LINK)
       .to(LoggerLink)
       .inSingletonScope();
-
     container
       .bind<string>(TYPES.BASE_URL_API)
       .toConstantValue(

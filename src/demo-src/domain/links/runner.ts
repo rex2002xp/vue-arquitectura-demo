@@ -1,9 +1,9 @@
-import { Injectable } from './di/injectable';
-import { Inject } from 'src/core/di';
-import { TYPES } from 'src/core/types';
-import { ExecutorLink } from 'src/core/links/execute-link';
-import { LoggerLink } from 'src/core/links/logger-link';
-import { UseCase } from 'src/core/use-cases/use-case';
+import { Injectable } from '../di/injectable';
+import { Inject } from 'src/demo-src/domain/di';
+import { TYPES } from 'src/demo-src/types';
+import { ExecutorLink } from 'src/demo-src/domain/links/execute-link';
+import { LoggerLink } from 'src/demo-src/domain/links/logger-link';
+import { UseCase } from 'src/demo-src/domain/use-cases/use-case';
 
 @Injectable()
 export class  Runner {

@@ -1,8 +1,8 @@
-import { Inject, Injectable } from 'src/core/di';
-import { TYPES } from 'src/core/types';
-import { BaseLink } from 'src/core/links/base-link';
-import { IContext } from 'src/core/links/i-context';
-import { ILogger} from 'src/core/use-cases/i-logger'
+import { Inject, Injectable } from 'src/demo-src/domain/di';
+import { TYPES } from 'src/demo-src/types';
+import { BaseLink } from 'src/demo-src/domain/links/base-link';
+import { IContext } from 'src/demo-src/domain/links/i-context';
+import { ILogger} from 'src/demo-src/domain/use-cases/i-logger'
 
 @Injectable()
 export class LoggerLink extends BaseLink {

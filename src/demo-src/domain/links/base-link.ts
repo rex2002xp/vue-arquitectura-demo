@@ -1,4 +1,4 @@
-import { IContext, ILink, EmptyLink } from 'src/core/links';
+import { IContext, ILink, EmptyLink } from 'src/demo-src/domain/links/index';
 
 export abstract class BaseLink {
   nextLink: ILink = new EmptyLink()

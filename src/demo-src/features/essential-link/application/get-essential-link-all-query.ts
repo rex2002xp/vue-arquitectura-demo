@@ -1,10 +1,10 @@
-import { Inject, Injectable } from 'src/core/di';
-import { TYPES } from 'src/core/types';
-import { Query } from 'src/core/use-cases/query';
+import { Inject, Injectable } from 'src/demo-src/domain/di';
+import { TYPES } from 'src/demo-src/types';
+import { Query } from 'src/demo-src/domain/use-cases/query';
 import {
   IEssentialLinkRepository,
   IEssentialLink,
-} from 'src/features/essential-link/domain';
+} from 'src/demo-src/features/essential-link/domain';
 
 @Injectable()
 export class GetEssentialLinkAllQuery extends Query<Promise<IEssentialLink[]>> {
